@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ Title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <input id="dark-mode-toggle" type="button" value="Dark Mode" class="button top-right" onclick="toggleDarkmode()">
+    <input id="white-mode-toggle" type="button" value="Dark Mode" class="white button top-right" style="display: none;" onclick="toggleDarkmode()">
+    {% block content %}
+    {% endblock %}
+</body>
+<script>
+    var darkModeEnabled = false
+
+    function toggleDarkmode() {
+        darkModeEnabled ^= true
+        let element = document.body;
+        element.classList.toggle('dark-mode')
+        let button = document.getElementById('dark-mode-toggle')
+        button.classList.toggle('button-dark')
+        button.style.display = darkModeEnabled ? 'none' : 'block'
+        let button2 = document.getElementById('white-mode-toggle')
+        button2.style.display = darkModeEnabled ? 'block' : 'none'
+        let input = document.getElementById('input')
+        if (input) input.classList.toggle('btn-white')
+    }
+
+    toggleDarkmode()
+</script>
+</html>

@@ -1,0 +1,75 @@
+body {
+    padding: 0px;
+}
+
+.top-right {
+    top: 20px;
+    right: 20px;
+    position: absolute;
+}
+.button {
+    background-color: #1f1f1f;
+	border-radius: 28px;
+	border: 1px solid #1f1f1f;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-size: 17px;
+	padding: 16px 31px;
+	text-decoration: none;
+    text-shadow: 0px 1px 0px #1f1f1f;
+}
+
+.white {
+    background-color: white;
+    border: 1px solid white;
+    color: #1f1f1f;
+    text-shadow: 0px 1px 0px white;
+}
+
+.white:hover {
+    background-color: white !important;
+}
+
+.button:focus {
+    outline: 0;
+}
+
+.button:hover {
+	background-color:#1f1f1f;
+}
+
+.dark-mode {
+    background-color: #1f1f1f;
+    color: white;
+}
+
+.btn {
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    background: #1f1f1f;
+    margin: 10px;
+    border-radius: 30%;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    border: 0;
+}
+
+.btn-white {
+    background: white !important;
+    color: #1f1f1f !important;
+}
+
+*:focus {
+    outline: 0;
+}
+
+.middle {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+}
