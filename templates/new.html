@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="middle">
-  <input id="input" class="btn" type="text">
+    <form action="" method="POST">
+        <input id="input" class="btn" type="text" name="url">
+        <input type="submit" value="Short it!">
+    </form>
 </div>
 {% endblock %}
