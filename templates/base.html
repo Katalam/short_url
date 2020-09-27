@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Short URL" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://url.citylossantos.com" />
+    <meta property="og:image" content="https://katalam.com/img/img.png" />
+    <meta property="og:description" content="URL shortener" />
+    <meta name="theme-color" content="#020470">
     <title>{{ Title }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <link rel="stylesheet" href="../static/css/styles.css">
 </head>
 <body>
     <input id="dark-mode-toggle" type="button" value="Dark Mode" class="button top-right" onclick="toggleDarkmode()">
