@@ -10,10 +10,10 @@ load_dotenv()
 app = Flask(__name__)
 
 db = mysql.connector.connect(
-    host = os.getenv("HOST"),
-    user = os.getenv("USER"),
-    password = os.getenv("PASSWORD"),
-    database = os.getenv("DATABASE")
+    host = os.getenv("DB_HOST"),
+    user = os.getenv("DB_USER"),
+    password = os.getenv("DB_PASSWORD"),
+    database = os.getenv("DB_DATABASE")
 )
 
 c = db.cursor()
