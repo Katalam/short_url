@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="middle">
-  <input id="input" class="btn" type="text" readonly value="{{ Slug }}">
+  <input id="input" class="btn big" type="text" readonly value="{{ Slug }}">
+  <input id="copy" class="btn" type="button" value="COPY" onclick="copy()">
 </div>
+<script>
+  function copy () {
+    const elem = document.getElementById('input')
+    elem.focus()
+    elem.select()
+    document.execCommand('copy')
+  }
+</script>
 {% endblock %}

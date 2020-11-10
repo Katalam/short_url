@@ -2,5 +2,8 @@
 {% block content %}
 <div class="middle">
   <h1>URL nicht gefunden.</h1>
+  <form action="{{ url_for('page') }}">
+    <button type="submit"></button>
+  </form>
 </div>
 {% endblock %}
