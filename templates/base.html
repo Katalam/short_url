@@ -6,7 +6,7 @@
     <meta property="og:title" content="Short URL" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://url.citylossantos.com" />
-    <meta property="og:image" content="https://file.citylossantos.com/img.png" />
+    <meta property="og:image" content="http://file.citylossantos.com/img.png" />
     <meta property="og:description" content="URL shortener" />
     <meta name="theme-color" content="#020470">
     <title>{{ Title }}</title>
@@ -19,10 +19,42 @@
     {% endblock %}
 </body>
 <script>
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = 'expires=' + d.toUTCString();
+        document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/';
+    }
+
+    function getCookie(cname) {
+        var name = cname + '=';
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function checkCookie() {
+        let darkmode = getCookie('shorturldarkmode');
+        if (darkmode === 'true') {
+            toggleDarkmode()
+            return
+        }
+    }
+
     var darkModeEnabled = false
 
     function toggleDarkmode() {
         darkModeEnabled ^= true
+        setCookie('shorturldarkmode', darkModeEnabled === 1, 365)
         let element = document.body;
         element.classList.toggle('dark-mode')
         let button = document.getElementById('dark-mode-toggle')
@@ -38,6 +70,6 @@
         if (input3) input3.classList.toggle('btn-white')
     }
 
-    toggleDarkmode()
+    checkCookie()
 </script>
 </html>
