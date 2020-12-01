@@ -1,6 +1,6 @@
 # Short url
 
-A basic user authentication system
+A basic url shortener
 
 ### Prerequisites
 
